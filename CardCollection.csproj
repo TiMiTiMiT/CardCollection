@@ -7,4 +7,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Classes\NewFolder1\**" />
+    <EmbeddedResource Remove="Classes\NewFolder1\**" />
+    <None Remove="Classes\NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="3.4.0" />
+    <PackageReference Include="MongoDB.Driver" Version="3.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Savefiles\Decklists\" />
+  </ItemGroup>
+
 </Project>

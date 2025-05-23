@@ -1,0 +1,40 @@
+Deck
+1 Lier, Disciple of the Drowned
+4 Vizier of Tumbling Sands
+2 Voyaging Satyr
+1 Fae of Wishes
+3 Arboreal Grazer
+1 Behold the Beyond
+3 Emergent Ultimatum
+1 Dark Petition
+4 Pore Over the Pages
+3 Bala Ged Recovery
+4 Sylvan Scrying
+4 Hidden Strings
+3 Archdruid's Charm
+2 Impulse
+1 Omniscience
+4 Lotus Field
+5 Forest
+2 Temple of Mystery
+4 Thespian's Stage
+4 Yavimaya Coast
+4 Island
+
+Sideboard
+1 Island
+1 Mountain
+1 Plains
+1 Swamp
+1 Forest
+1 Approach of the Second Sun
+2 Shifting Ceratops
+1 Fae of Wishes
+1 Mastermind's Acquisition
+2 Peer into the Abyss
+2 Dig Through Time
+2 Wilt
+1 Tormod's Crypt
+1 Negate
+1 Blink of an Eye
+1 Sweltering Suns

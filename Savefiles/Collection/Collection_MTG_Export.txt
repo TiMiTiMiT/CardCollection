@@ -1,0 +1,741 @@
+Venerated Rotpriest:1
+Commune with Spirits:1
+Llanowar Stalker:3
+Placid Rottentail:4
+Gaea's Might:4
+Thirsting Roots:1
+Rustvine Cultivator:4
+Arboreal Grazer:1
+Many Partings:2
+Tyvar's Stand:2
+Tail Swipe:2
+Green Sun's Twilight:1
+Arachnoid Adaptation:4
+Strength of the Coalition:1
+Tamiyo's Safekeeping:1
+Oashra Cultivator:1
+Bite Down:3
+Wary Thespian:4
+Colossal Growth:5
+Titanic Growth:1
+Nishoba Brawler:2
+Ozolith, the Shattered Spire:2
+Tear Asunder:2
+Sunbathing Rootwalla:4
+Vineshaper Prodigy:4
+Cosmic Hunger:2
+Coiling Stalker:1
+Roaring Earth:1
+Boon of Boseiju:1
+Branchblight Stalker:3
+Ruthless Predation:3
+Infectious Bite:1
+Cankerbloom:4
+Copper Longlegs:1
+Orochi Merge-Keeper:1
+Kappa Tech-Wrecker:1
+Wose Pathfinder:2
+Llanowar Loamspeaker:1
+Urborg Lhurgoyf:1
+Floriferous Vinewall:5
+Yavimaya Iconoclast:1
+Meriadoc Brandybuck:1
+Mushroom Watchdogs:2
+Snarespinner:3
+Ruins Recluse:4
+Kami of Whispered Hopes:8
+Broken Wings:3
+Contagious Vorrac:4
+Fairgrounds Trumpeter:4
+Viral Spawning:3
+Bog Badger:5
+Deathbloom Gardener:5
+Scout the Wilderness:4
+Galadhrim Bow:1
+Threats Undetected:1
+Careful Cultivation:1
+Peregrin Took:1
+Elvish Hydromancer:2
+Hexbane Tortoise:4
+The Weatherseed Treaty:3
+Blighted Burgeoning:2
+Maze's Mantle:2
+Tribute to the World Tree:1
+Stew the Coneys:1
+Storyweave:2
+Season of Renewal:1
+Tanglespan Lookout:1
+Ichorspit Basilisk:2
+Tandem Takedown:2
+Lattice-Blade Mantis:3
+Geothermal Kami:2
+Evolved Spinoderm:1
+Venomous Brutalizer:2
+Tangleweave Armor:1
+Glistening Dawn:1
+Converter Beast:4
+Magnigoth Sentry:6
+Jukai Preserver:1
+Harmonious Emergence:2
+Favor of Jukai:1
+Fertilid's Favor:2
+Bag End Porter:2
+Barkweave Crusher:3
+Conduit of Worlds:3
+Tyrranax Atrocity:1
+Galadriel, Gift-Giver:1
+Oil-Gorger Troll:1
+Slimefoot's Survey:2
+Linebreaker Baloth:3
+Elfhame Wurm:4
+Territorial Maro:1
+Thrun, Breaker of Silence:1
+Skysnare Spider:1
+Generous Ent:1
+Greater Tanuki:2
+Timberland Ancient:4
+Wurmquake:1
+Glissa's Retriever:1
+Mossbeard Ancient:1
+Herd Migration:1
+Yavimaya Sojourner:3
+The World Spell:1
+Zopandrel, Hunger Dominus:1
+Paladin of Predation:4
+Goliath Hatchery:3
+Nissa, Ascended Animist:1
+Surrak and Goreclaw:4
+Sawblade Scamp:6
+Coming In Hot:2
+Hexgold Slash:3
+Voltage Surge:2
+Phoenix Chick:2
+Hammerhand:4
+Experimental Synthesizer:1
+Viashino Branchrider:4
+Churning Reservoir:1
+Free from Flesh:3
+Vindictive Flamestoker:1
+Flowstone Infusion:3
+Simian Sling:2
+Kindled Fury:1
+Shock:1
+Flame Discharge:1
+Yavimaya Steelcrusher:6
+Thrill of Possibility:3
+Goblin Fireleaper:1
+Furious Bellow:3
+Fires of Victory:3
+Axgard Artisan:4
+Distemper of the Blood:1
+Hexgold Halberd:4
+Volcanic Spite:4
+Sprouting Goblin:1
+Goblin Picker:5
+Twinferno:3
+Lightning Strike:2
+Blazing Crescendo:3
+Trailblazing Historian:2
+Ghitu Amplifier:4
+Akki Ember-Keeper:2
+Electrostatic Infantry:2
+Goblin Assailant:3
+Red Sun's Twilight:2
+Ral's Reinforcements:2
+Smash to Dust:3
+Scouring Sands:1
+Cast into the Fire:1
+Goro-Goro, Disciple of Ryusei:1
+Yotia Declares War:2
+Towashi Songshaper:1
+Radha's Firebrand:1
+Swarming of Moria:1
+Unstoppable Ogre:1
+Vulshok Factory:1
+Balduvian Berserker:1
+Seismic Wave:1
+Forgehammer Centurion:1
+Nahiri's Warcrafting:1
+Slobad, Iron Goblin:1
+Magmatic Sprinter:1
+Kuldotha Cackler:1
+Rebel Salvo:3
+Hangar Scrounger:4
+Karsus Depthguard:4
+Bladegraft Aspirant:3
+Voldaren Thrillseeker:2
+Peerless Samurai:2
+Keldon Strike Team:3
+Flowstone Kavu:4
+Rhuk, Hexgold Nabber:5
+Hurloon Battle Hymn:3
+Demon Bolt:2
+Furnace Punisher:3
+Volt Charge:3
+Fire of Orthanc:1
+Twinshot Sniper:1
+Scrapyard Steelbreaker:1
+Dragon Whelp:1
+The Elder Dragon War:1
+Heiko Yamazaki, the General:1
+Foray of Orcs:2
+In Thrall to the Pit:6
+Coalition Warbrute:5
+Unexpected Windfall:4
+Vulshok Splitter:4
+Chimney Rabble:2
+Orthion, Hero of Lavabrink:4
+Stoke the Flames:2
+Redcap Heelslasher:4
+Olog-hai Crusher:2
+Defiler of Instinct:2
+Goldwardens' Gambit:1
+Chandra, Hope's Beacon:1
+Wake of Destruction:1
+Gathan Raiders:1
+Kazuul, Tyrant of the Cliffs:1
+Hexplate Wallbreaker:1
+Dragonwing Glider:1
+Invoke Calamity:1
+Temporal Firestorm:1
+Molten Rebuke:3
+Kami of Industry:2
+Fearless Skald:3
+Furnace Strider:2
+Burn Down the House:3
+Meria's Outrider:4
+Resistance Skywarden:2
+Hurler Cyclops:2
+Molten Monstrosity:4
+Oxidda Finisher:3
+Skoa, Embermage:2
+Cragsmasher Yeti:4
+Shatter the Source:2
+Chaotic Transformation:2
+Jaya's Firenado:4
+Island:73
+Swamp:112
+Drowned Catacomb:2
+Watery Grave:1
+Darkslick Shores:2
+Field of Ruin:8
+Temple of Deceit:4
+Shark Typhoon:1
+Drown in the Loch:2
+Narset, Parter of Veils:4
+Sinister Sabotage:3
+Censor:4
+Consider:4
+Dig Through Time:3
+Extinction Event:2
+Negate:9
+Fatal Push:4
+Mystical Dispute:3
+Torrential Gearhulk:2
+Heartless Act:2
+Languish:2
+Test of Talents:4
+Cry of the Carnarium:2
+Go Blank:2
+Cling to Dust:2
+Duress:8
+Aspirant's Ascent:1
+Dispel:1
+Void Snare:1
+Font of Progress:1
+Fading Hope:1
+Minor Misstep:1
+Moonsnare Prototype:1
+Network Disruptor:1
+Glistener Seer:3
+Pixie Illusionist:4
+Shore Up:3
+Combat Research:3
+Rona's Vortex:2
+Timely Interference:5
+Opt:4
+Academy Loremaster:2
+Experimental Augury:1
+Short Circuit:2
+Bring the Ending:1
+Silver Scrutiny:1
+Malcator's Watcher:1
+Founding the Third Path:1
+Coral Colony:1
+Go-Shintai of Lost Wisdom:1
+Planar Incision:1
+Mercurial Spelldancer:1
+Impulse:2
+Atmosphere Surgeon:2
+Haunting Figment:4
+Joint Exploration:2
+Impede Momentum:5
+Ichor Synthesizer:3
+Armguard Familiar:2
+Strategic Planning:4
+Zephyr Winder:3
+Oracle of Tragedy:3
+Expedition Lookout:3
+Battlewing Mystic:2
+Protect the Negotiators:3
+Thrummingbird:6
+Essence Scatter:3
+Volshe Tideturner:5
+Serum Snare:2
+Diminisher Witch:1
+Unctus, Grand Metatect:1
+Preening Champion:1
+Acquisition Octopus:1
+Suit Up:1
+Covert Technician:1
+Gitaxian Raptor:1
+Tamiyo's Logbook:1
+Eye of Malcator:1
+Distorted Curiosity:3
+Chrome Prowler:5
+Tameshi, Reality Architect:2
+Tolarian Geyser:3
+Xerex Strobe-Knight:2
+Phyrexian Espionage:3
+Moonfolk Puzzlemaker:2
+Guardians of Oboro:3
+Trawler Drake:2
+Divide by Zero:4
+Academy Wall:3
+Soaring Drake:4
+Ephara's Dispersal:3
+Voda Sea Scavenger:3
+Referee Squad:3
+Mesmerizing Dose:3
+Foresee:1
+Breath of the Sleepless:1
+Temporal Cleansing:1
+The Phasing of Zhalfir:1
+Meeting of Minds:1
+Dissipation Field:1
+Transplant Theorist:1
+Mindsplice Apparatus:2
+Tamiyo's Immobilizer:2
+Meldweb Curator:4
+Tidepool Turtle:3
+Zephyr Singer:2
+Talas Lookout:4
+Wicked Slumber:2
+Micromancer:4
+Moonsnare Specialist:3
+Saiba Trespassers:1
+Quicksilver Fisher:3
+Frostfist Strider:2
+Serum Sovereign:3
+Astral Wingspan:2
+Djinn of the Fountain:1
+Hotshot Investigators:1
+Thunderhead Squadron:3
+Tidal Terror:3
+Tolarian Terror:6
+Alrund's Epiphany:2
+Interdisciplinary Mascot:3
+Plains:82
+Mountain:92
+Forest:85
+Innkeeper's Talent:4
+Ichormoon Gauntlet:1
+Radiant Grove:5
+Graypelt Refuge:2
+Yavimaya Coast:2
+Tangled Islet:3
+Thornwood Falls:2
+Molten Tributary:6
+Temple of Epiphany:1
+Frostboil Snarl:3
+Sacred Peaks:5
+Adarkar Wastes:1
+Idyllic Beachfront:1
+Jungle Hollow:1
+Haunted Mire:3
+Contaminated Aquifer:3
+Dismal Backwater:1
+Sunlit Marsh:2
+The Monumental Facade:1
+The Mycosynth Gardens:2
+Urza's Tower:4
+Urza's Power Plant:4
+Urza's Mine:4
+Geier Reach Sanitarium:2
+Temple of the False God:1
+The Fair Basilica:4
+The Autonomous Furnace:5
+The Dross Pits:5
+The Hunter Maze:3
+The Surgical Bay:4
+Exotic Orchard:1
+Underground Mortuary:1
+Fountainport:2
+Llanowar Wastes:4
+Fabled Passage:4
+Blooming Marsh:4
+Restless Cottage:4
+Tranquil Frillback:3
+Pawpatch Recruit:2
+Myr Superion:1
+Introduction to Annihilation:3
+Myr Convert:2
+Bilbo's Ring:1
+Phyrexian Atlas:2
+Glistening Sphere:1
+Graaz, Unstoppable Juggernaut:2
+Mind Stone:1
+Ichorplate Golem:1
+Tablet of Compleation:1
+Basilica Skullbomb:1
+Monument to Perfection:1
+Lux Artillery:1
+Surgical Skullbomb:2
+Atraxa's Skitterfang:1
+Furnace Skullbomb:1
+The Filigree Sylex:1
+Prophetic Prism:1
+Vanquisher's Axe:4
+Inscribed Tablet:3
+Prosthetic Injector:2
+Dross Skullbomb:2
+Iron Apprentice:1
+Ninja's Kunai:1
+Bronze Cudgels:2
+Hero's Heirloom:1
+Salvaged Manaworker:3
+Riot Gear:2
+High-Speed Hoverbike:2
+Ecologist's Terrarium:2
+Relic of Legends:1
+Automatic Librarian:4
+Sword of Once and Future:1
+Myr Custodian:1
+Searchlight Companion:1
+Network Terminal:1
+Mirror Box:1
+Circuit Mender:1
+Golden Argosy:1
+Ribskiff:1
+Shield-Wall Sentinel:5
+Jodah's Codex:2
+Meteorite:2
+Shrine Steward:1
+Timeless Lotus:1
+Thundersteel Colossus:1
+Walking Skyscraper:1
+Vampiric Rites:1
+Price of Betrayal:1
+Cult Conscript:1
+Mirrodin Avenged:1
+Confront the Past:1
+Shelob's Ambush:1
+Black Sun's Twilight:3
+Bone Splinters:4
+Urborg Repossession:3
+Battlefly Swarm:2
+Scorn-Blade Berserker:4
+Corrupted Conviction:2
+Annihilating Glare:3
+Dark Ritual:4
+Shambling Ghast:4
+Cut Down:4
+Eyetwitch:4
+Bilious Skulldweller:2
+Vraan, Executioner Thane:2
+Leech Gauntlet:1
+The Raven Man:1
+Diabolic Edict:1
+Sangrophage:1
+Reckoner's Bargain:1
+Offer Immortality:3
+Necrogen Communion:3
+Gift of Compleation:4
+Phyrexian Vivisector:2
+Dreg Recycler:4
+Final Flourish:2
+Feed the Swarm:2
+The Meathook Massacre:3
+Cruelclaw's Heist:2
+Shoot the Sheriff:1
+Go for the Throat:3
+Deadly Dispute:3
+Infernal Grasp:2
+Blightbelly Rat:2
+Easterling Vanguard:2
+Diabolic Intent:4
+Drown in Ichor:2
+Anoint with Affliction:2
+Pestilent Syphoner:2
+Splatter Goblin:4
+Blight Pile:2
+Toxic Abomination:2
+Stronghold Arena:1
+Knight of Dusk's Shadow:2
+Waste Not:4
+Pilfer:2
+Tribute to Urborg:4
+Battle-Rage Blessing:3
+Deep-Cavern Bat:4
+Shred Memory:1
+Geth, Thane of Contracts:2
+Karumonix, the Rat King:1
+Cutthroat Centurion:1
+Reckoner Shakedown:1
+Balduvian Atrocity:1
+Glistening Deluge:1
+Mordor Trebuchet:2
+Stinging Hivemaster:3
+Vraska's Fall:2
+Chittering Skitterling:2
+Bonepicker Skirge:8
+Sedgemoor Witch:3
+Necrotic Fumes:4
+Braids's Frightful Return:2
+Ambulatory Edifice:2
+Ichor Shade:2
+Eerie Soultender:4
+Aggressive Sabotage:4
+Seer of Stolen Sight:4
+Liliana, the Last Hope:2
+Liliana of the Veil:4
+Etched Familiar:4
+Preacher of the Schism:2
+Choking Miasma:3
+Debt to the Kami:4
+Infectious Inquiry:3
+Soul Transfer:4
+Shadow Prophecy:5
+Skullport Merchant:2
+Unseal the Necropolis:2
+Dunland Crebain:2
+Compleated Huntmaster:2
+Gibbering Barricade:5
+Phyrexian Rager:5
+Unforgiving One:1
+Necrosquito:1
+Sheoldred's Headcleaver:1
+Twisted Embrace:1
+Kami of Terrible Secrets:1
+Evernight Shade:1
+Go-Shintai of Hidden Cruelty:1
+Phyrexian Obliterator:1
+Snarling Warg:1
+Sheoldred, the Apocalypse:1
+Feed the Infection:2
+Grief:4
+Grave Pact:4
+Phyrexian Warhorse:4
+Extinguish the Light:5
+Tattered Apparition:5
+Monstrous War-Leech:2
+Drag to the Bottom:1
+Sheoldred's Restoration:2
+Defiler of Flesh:1
+Testament Bearer:4
+Terror of Towashi:4
+Deadly Derision:4
+Harvester of Misery:1
+Invoke Despair:2
+Gulping Scraptrap:1
+Kinzu of the Bleak Coven:5
+Nimraiser Paladin:4
+Junji, the Midnight Sky:2
+Sengir Connoisseur:1
+Kami of Restless Shadows:1
+Archpriest of Shadows:3
+Failed Conversion:2
+Liliana, Death's Majesty:4
+Vraska, Betrayal's Sting:4
+Professor Onyx:2
+Thought Distortion:3
+Caustic Hound:1
+Dokuchi Shadow-Walker:2
+Blood on the Snow:3
+Injector Crocodile:4
+Peer into the Abyss:1
+Writhing Necromass:3
+Hoarding Broodlord:1
+Jared Carthalion:1
+Vishgraz, the Doomhive:1
+Zur, Eternal Schemer:1
+Xira, the Golden Sting:1
+Jor Kadeen, First Goldwarden:1
+Astor, Bearer of Blades:1
+Tori D'Avenant, Fury Rider:1
+Bladehold War-Whip:1
+Baird, Argivian Recruiter:4
+Radha, Coalition Warlord:2
+Rulik Mons, Warren Chief:1
+Meria, Scholar of Antiquity:1
+Migloz, Maze Crusher:2
+Lukka, Bound to Ruin:1
+Serum-Core Chimera:1
+Jhoira, Ageless Innovator:1
+Balmor, Battlemage Captain:2
+Galvanic Iteration:3
+Tura Kennerüd, Skyknight:2
+Stenn, Paranoid Partisan:2
+Vohar, Vodalian Desecrator:1
+Ertai Resurrected:1
+Rona, Sheoldred's Faithful:4
+Spirit-Sister's Call:1
+Sorin, Vengeful Bloodlord:4
+Sorin, Solemn Visitor:4
+Shadow Summoning:4
+Aron, Benalia's Ruin:2
+Elas il-Kor, Sadistic Pilgrim:2
+Kaya, Intangible Slayer:2
+Ria Ivor, Bane of Bladehold:1
+Orah, Skyclave Hierophant:1
+Melira, the Living Cure:1
+Zar Ojanen, Scion of Efrava:2
+Queen Allenal of Ruadach:2
+Butterbur, Bree Innkeeper:1
+Ajani, Sleeper Agent:1
+Aragorn and Arwen, Wed:1
+Uurg, Spawn of Turg:3
+Nemata, Primeval Warden:2
+Bortuk Bonerattle:5
+Necrogen Rotpriest:3
+Gloomshrieker:1
+Tyvar, Jubilant Brawler:1
+Glissa Sunslayer:1
+Pillage the Bog:2
+Rivaz of the Claw:1
+Mauhúr, Uruk-hai Captain:1
+The Balrog, Flame of Udûn:1
+Nael, Avizoa Aeronaut:3
+Tatyova, Steward of Tides:1
+Ivy, Gleeful Spellthief:1
+Ezuri, Stalker of Spheres:2
+You Cannot Pass!:1
+Runic Shot:3
+Progenitor Exarch:1
+Regent's Authority:1
+Crawling Chorus:2
+Zealot's Conviction:2
+Clockwork Drawbridge:3
+Sinew Dancer:6
+Duelist of Deep Faith:4
+Skrelv's Hive:1
+Compleat Devotion:3
+Infested Fleshcutter:2
+Angelic Intervention:2
+Alabaster Host Sanctifier:3
+Aerial Boost:1
+Planar Disruption:3
+Benalish Faithbonder:4
+Artillery Blast:4
+Norn's Inquisitor:3
+Ossification:2
+Wanderer's Intervention:2
+Bladed Ambassador:5
+Resolute Reinforcements:3
+Valiant Veteran:1
+Kitsune Ace:1
+Take Up the Shield:3
+Jawbone Duelist:1
+Destroy Evil:6
+White Sun's Twilight:2
+Mandible Justiciar:3
+Kemba, Kha Enduring:1
+Astrid Peth:1
+Norn's Wellspring:1
+Incisor Glider:1
+Staff of the Storyteller:1
+Dúnedain Blade:1
+Fierce Retribution:1
+Frodo, Determined Hero:1
+Ancestral Katana:1
+Westfold Rider:1
+Sunder the Gateway:2
+East-Mark Cavalier:1
+Knight of Dawn's Light:1
+Benalish Sleeper:4
+Phyrexian Missionary:1
+Samite Herbalist:3
+Juniper Order Rootweaver:4
+Monastery Mentor:1
+Seal from Existence:1
+Leonin Lightbringer:1
+Love Song of Night and Day:2
+Rosie Cotton of South Lane:1
+Rhet-Crop Spearmaster:1
+Eastfarthing Farmer:1
+Anointed Peacekeeper:1
+Dragonfly Suit:1
+Imperial Recovery Unit:1
+Intercessor's Arrest:1
+Second Breakfast:1
+Join Forces:1
+Golden-Tail Disciple:1
+Guardian of Ghirapur:1
+Skyhunter Strike Force:2
+Banishing Light:2
+Charismatic Vanguard:3
+Disposal Mummy:4
+Argivian Cavalier:3
+Knight of the Keep:3
+Annex Sentry:3
+Charge of the Mites:3
+Vanish into Eternity:4
+Phyrexian Pegasus:3
+Seedpod Caretaker:3
+Citizen's Arrest:4
+Stall for Time:2
+Cleaving Skyrider:2
+Mesa Cavalier:3
+Coalition Skyknight:3
+Serra Paragon:1
+Captain's Call:4
+Mondrak, Glory Dominus:2
+Phyrexian Vindicator:1
+Hexgold Hoverwings:1
+Orthodoxy Enforcer:1
+Protector of Gondor:2
+Gandalf, White Rider:1
+Griffnaut Tracker:1
+Heroic Charge:5
+Mite Overseer:4
+Porcelain Zealot:4
+When We Were Young:2
+Repel the Vile:1
+Historian's Boon:1
+Seven-Tail Mentor:3
+Tiller of Flesh:3
+Inspired Charge:1
+Griffin Protector:4
+Wingmantle Chaplain:1
+Archangel of Wrath:1
+Prayer of Binding:2
+Urza Assembles the Titans:2
+Danitha, Benalia's Hope:1
+Mirran Bardiche:1
+Landroval, Horizon Witness:1
+Charmed Clothier:1
+Basilica Shepherd:3
+Sunblade Samurai:3
+Shalai's Acolyte:2
+Essence of Orthodoxy:3
+Infected Defector:3
+Imperial Oath:1
+Soaring Sandwing:1
+Leyline Binding:1
+Apostle of Invasion:3
+Alabaster Host Intercessor:3
+Argivian Phalanx:4
+Sky-Blessed Samurai:2
+Hive of the Eye Tyrant:2
+Crystal Grotto:2
+Shire Terrace:2
+Plaza of Heroes:1
+Beseech the Mirror:4
+Elesh Norn, Grand Cenobite:2
+Lolth, Spider Queen:2
+Village Rites:2
+Hunt for Specimens:2
+Skrelv, Defector Mite:1
+Pest Summoning:3
+Mascot Exhibition:2
+Environmental Sciences:2
