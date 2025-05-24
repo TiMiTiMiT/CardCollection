@@ -17,7 +17,7 @@ namespace CardCollection.Classes.Data
 
         public MTGService()
         {
-            _collectionDb = new MongoDbService<MTGCard, MTGDeck>("card_database", "MTGCardCollectionTest", "MTGDeckCollectionTest");
+            _collectionDb = new MongoDbService<MTGCard, MTGDeck>("card_database", "MTGCardCollection", "MTGDeckCollection");
             ScryFallManager = new ScryFallManager();
         }
 

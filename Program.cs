@@ -6,6 +6,46 @@ using System.IO;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
 
+//Create base settings if not existing
+string SettingsDir = Path.Combine(
+    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+    "CardCollectionApp"
+);
+
+string? SettingsFile = Path.Combine(SettingsDir, "settings.json");
+if (!File.Exists(SettingsFile))
+{
+    Console.WriteLine("> Since this is the first time you use the card collection, you need to configure you base settigns.");
+    Console.WriteLine("> You need a directory to save decklist, or export your collection.");
+    Console.WriteLine("Please enter a path to create a 'Savefiles' directory at.");
+    string? SavePath = Console.ReadLine();
+
+    // create savefile structure at the location if not existing
+    string SavefilePath = Path.Combine(SavePath, "Savefiles");
+    if(!Directory.Exists(SavefilePath))
+    {
+        CreateSaveFilesDirectory(SavePath);
+    }
+
+    Console.WriteLine("> Enter the connection string for your mongoDB");
+    string? MongoDBConnection = Console.ReadLine();
+
+    Console.WriteLine("> Enter the MongoDB database name");
+    string? MongoDBName = Console.ReadLine();
+
+    var defaultSettings = new
+    {
+        current_game = "MTG",
+        save_path = SavePath,
+        mongoDB_conection = MongoDBConnection,
+        mongoDB_database_name = MongoDBName,
+    };
+
+    Directory.CreateDirectory(SettingsDir);
+    string json = System.Text.Json.JsonSerializer.Serialize(defaultSettings, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+    File.WriteAllText(SettingsFile, json);
+}
+
 while (true)
 {
     clearConsole();
@@ -69,6 +109,13 @@ static void HandleSettings()
                     case "current_game":
                         ChangeCurrentGame();
                         break;
+                    case "save_path":
+                        ChangeSavefilePath();
+                        break;
+                    case "mongoDB_conection":
+                    case "mongoDB_database_name":
+                        ChangeSettingDefault(SettingName);
+                        break;
                     case "exit":
                         goto EndOfLoop;
                     default:
@@ -105,6 +152,37 @@ static void ChangeCurrentGame()
     if( GameName != null && GamesAvailiable.Contains(GameName))
     {
         Settings["current_game"] = GameName;
+        UpdateSettings();
+    }
+}
+
+static void ChangeSavefilePath()
+{
+    clearConsole();
+    Console.WriteLine("Enter your new path:");
+    string? NewPath = Console.ReadLine();
+
+    if(NewPath != null)
+    {
+        // move old files to new path
+        Directory.Move(Settings["save_path"], Path.Combine(NewPath, "Savefiles"));
+
+        // save new path
+        Settings["save_path"] = NewPath;
+        UpdateSettings();
+
+    }
+}
+
+// default case for changing settign, where the user just enters the replacement
+static void ChangeSettingDefault(string SettingName)
+{
+    Console.WriteLine("> Enter the new value");
+    string? input = Console.ReadLine();
+
+    if(input != null)
+    {
+        GlobalVariables.Settings[SettingName] = input;
         UpdateSettings();
     }
 }
@@ -211,14 +289,14 @@ static async Task ImportCollection()
 
     if(input == "y")
     {
-        Console.WriteLine("Importing deck, plese wait...");
+        Console.WriteLine("> Importing deck, plese wait...");
         await GlobalVariables.MTGService.ImportCardCollection();
     }
 }
 
 static async Task ExportCollection() 
 {
-    waitForInputMessage("A txt file with the export will be created in the collections folder.");
+    waitForInputMessage("> A txt file with the export will be created in the collections folder.");
     await GlobalVariables.MTGService.ExportCardCollection();
 }
 
@@ -294,7 +372,7 @@ static MTGDeck ReadDecklist(string DeckName)
 
     try
     {
-        StreamReader StreamReader = new StreamReader($"C:\\Users\\Tim\\source\\repos\\CardCollection\\Savefiles\\Decklists\\{DeckName}.txt");
+        StreamReader StreamReader = new StreamReader($"{GlobalVariables.Settings["save_path"]}\\Decklists\\{DeckName}.txt");
         String? line;
 
         // for more information about the format og the decklist check the github wiki
@@ -360,7 +438,7 @@ static (string?, int) FormatLineForDictionary(string line)
 
 static async Task DeleteDeck()
 {
-    Console.WriteLine("> Enter the name of teh deck you want to delete");
+    Console.WriteLine("> Enter the name of the deck you want to delete");
     String? DeckName = Console.ReadLine();
 
     if (DeckName != null)
@@ -399,6 +477,25 @@ static void clearConsole()
 static void waitForInputMessage(string message)
 {
     Console.WriteLine(message);
-    Console.WriteLine("Press any key to continue");
+    Console.WriteLine("> Press enter to continue");
     string? _ = Console.ReadLine();
+}
+
+static void CreateSaveFilesDirectory(string SavePath)
+{
+    string SavefilePath = Path.Combine(SavePath, "Savefiles");
+    if (!Directory.Exists(SavefilePath))
+    {
+        string CollectionPath = Path.Combine(SavePath, "Savefiles", "Collection");
+        if (!Directory.Exists(CollectionPath))
+        {
+            Directory.CreateDirectory(CollectionPath);
+        }
+
+        string DecklistPath = Path.Combine(SavePath, "Savefiles", "Decklist");
+        if (!Directory.Exists(DecklistPath))
+        {
+            Directory.CreateDirectory(DecklistPath);
+        }
+    }
 }

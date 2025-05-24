@@ -23,8 +23,8 @@ namespace CardCollection.Classes.Data
 
         public MongoDbService(string databaseName, string cardCollectionName, string deckCollectionName)
         {
-            Client = new MongoClient("mongodb://localhost:27017");
-            Database = Client.GetDatabase(databaseName);
+            Client = new MongoClient(GlobalVariables.Settings["mongoDB_conection"]);
+            Database = Client.GetDatabase(GlobalVariables.Settings["mongoDB_database_name"]);
 
             CardCollectionName = cardCollectionName;
             _cardCollection = Database.GetCollection<TCard>(cardCollectionName);
@@ -89,7 +89,7 @@ namespace CardCollection.Classes.Data
 
         public async Task ExportCardCollection(string GameName)
         {
-            string path = $"C:\\Users\\Tim\\source\\repos\\CardCollection\\Savefiles\\Collection\\Collection_{GameName}_Export.txt";
+            string path = $"{GlobalVariables.Settings["save_path"]}\\Collection\\Collection_{GameName}_Export.txt";
 
             if (File.Exists(path))
             {
@@ -119,7 +119,7 @@ namespace CardCollection.Classes.Data
             // import collection from file
             try
             {
-                StreamReader StreamReader = new StreamReader("C:\\Users\\Tim\\source\\repos\\CardCollection\\Savefiles\\Collection\\Collection_MTG_Export_Test.txt");
+                StreamReader StreamReader = new StreamReader($"{GlobalVariables.Settings["save_path"]}\\Collection\\Collection_MTG_Export.txt");
                 String? line;
 
                 while ((line = StreamReader.ReadLine()) != null)
