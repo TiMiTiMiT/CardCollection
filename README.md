@@ -24,4 +24,4 @@ My goal is to build a working prototype first and then go over the code again an
 - When removing a card check that the quantity is now still >= InUse
 
 ## Bugs
-- Adventure cards ar not added to collection
+- ?
