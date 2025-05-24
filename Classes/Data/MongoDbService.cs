@@ -10,18 +10,26 @@ using MongoDB.Driver;
 
 namespace CardCollection.Classes.Data
 {
-    internal class MongoDbService<TCard, TDeck> where TCard : ICard where TDeck : IDeck
+    internal class MongoDbService<TCard, TDeck> 
+        where TCard : ICard 
+        where TDeck : IDeck
     {
+        private MongoClient Client;
+        private IMongoDatabase Database;
         private IMongoCollection<TCard> _cardCollection;
+        private string CardCollectionName;
         private IMongoCollection<TDeck> _deckCollection;
+        private string DeckCollectionName;
 
         public MongoDbService(string databaseName, string cardCollectionName, string deckCollectionName)
         {
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase(databaseName);
+            Client = new MongoClient("mongodb://localhost:27017");
+            Database = Client.GetDatabase(databaseName);
 
-            _cardCollection = database.GetCollection<TCard>(cardCollectionName);
-            _deckCollection = database.GetCollection<TDeck>(deckCollectionName);
+            CardCollectionName = cardCollectionName;
+            _cardCollection = Database.GetCollection<TCard>(cardCollectionName);
+            DeckCollectionName = deckCollectionName;
+            _deckCollection = Database.GetCollection<TDeck>(deckCollectionName);
         }
 
         // ----- Card methods -----
@@ -32,7 +40,6 @@ namespace CardCollection.Classes.Data
         {
             var Filter = Builders<TCard>.Filter.Eq(Card => Card.Name, CardName);
             TCard? card = await _cardCollection.Find(Filter).FirstOrDefaultAsync();
-
 
             return card;
         }
@@ -75,6 +82,11 @@ namespace CardCollection.Classes.Data
             await _cardCollection.UpdateOneAsync(Filter, UpdateBuilder);
         }
 
+        public async Task DropCardCollection()
+        {
+            await Database.DropCollectionAsync(CardCollectionName);
+        }
+
         public async Task ExportCardCollection(string GameName)
         {
             string path = $"C:\\Users\\Tim\\source\\repos\\CardCollection\\Savefiles\\Collection\\Collection_{GameName}_Export.txt";
@@ -101,9 +113,13 @@ namespace CardCollection.Classes.Data
 
         public async Task ImportCardCollection(Func<string, int, Task> AddCardGameSpecific)
         {
+            // drop collection to reset
+            await DropCardCollection();
+
+            // import collection from file
             try
             {
-                StreamReader StreamReader = new StreamReader("C:\\Users\\Tim\\source\\repos\\CardCollection\\Savefiles\\Collection\\Collection_MTG_Export.txt");
+                StreamReader StreamReader = new StreamReader("C:\\Users\\Tim\\source\\repos\\CardCollection\\Savefiles\\Collection\\Collection_MTG_Export_Test.txt");
                 String? line;
 
                 while ((line = StreamReader.ReadLine()) != null)
@@ -116,9 +132,11 @@ namespace CardCollection.Classes.Data
 
                         await AddCardGameSpecific(CardName, Int32.Parse(Amount));
                         // deley of 1 second because the documentation of scrfall ask for 50 - 10 millisecond deley and i want to make sure for now
-                        await Task.Delay(TimeSpan.FromSeconds(1));
+                        await Task.Delay(TimeSpan.FromSeconds(0.1));
                     }
                 }
+
+                StreamReader.Close();
             }
             catch (Exception e)
             {
@@ -128,5 +146,27 @@ namespace CardCollection.Classes.Data
         }
 
         // ----- Deck methods -----
+        public async Task AddDeck(TDeck Deck) =>
+            await _deckCollection.InsertOneAsync(Deck);
+
+        public async Task<TDeck> FindDeckByName(string DeckName)
+        {
+            var Filter = Builders<TDeck>.Filter.Eq(Deck => Deck.Name, DeckName);
+            TDeck? Deck = await _deckCollection.Find(Filter).FirstOrDefaultAsync();
+
+            return Deck;
+        }
+
+        public async Task RemoveDeckByName(string DeckName) 
+        {
+            var Filter = Builders<TDeck>.Filter.Eq(Deck => Deck.Name, DeckName);
+            await _deckCollection.DeleteOneAsync(Filter);
+        }
+
+        public async Task DropDeckCollection()
+        {
+            await Database.DropCollectionAsync(DeckCollectionName);
+        }
+
     }
 }

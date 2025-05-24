@@ -17,20 +17,31 @@ namespace CardCollection.Classes.Data
 
         public MTGService()
         {
-            _collectionDb = new MongoDbService<MTGCard, MTGDeck>("card_database", "MTGCardCollection", "MTGDeckCollection");
+            _collectionDb = new MongoDbService<MTGCard, MTGDeck>("card_database", "MTGCardCollectionTest", "MTGDeckCollectionTest");
             ScryFallManager = new ScryFallManager();
         }
 
-        public async Task AddMTGCard(string Card, int Amount) 
+        // ----- Card methods -----
+        public async Task AddMTGCard(string CardName, int Amount) 
         {
-            string? response = await this.ScryFallManager.GetCard(Card);
+            string? response = await this.ScryFallManager.GetCard(CardName);
 
             if (response != null)
             {
-                MTGCard card = JsonSerializer.Deserialize<MTGCard>(response);
-                card.Quantity = Amount;
+                MTGCard Card = JsonSerializer.Deserialize<MTGCard>(response);
+                // change name because some cards have 2 name s in one and should only have one of those for usability. For more information check the Wiki
+                Card.Name = CardName;
+                Card.Quantity = Amount;
 
-                await _collectionDb.AddCard(card);
+                bool CardExists = await GlobalVariables.MTGService.DoesCardExistInCollection(Card.Name);
+                if (CardExists)
+                {
+                    await _collectionDb.IncreaseQuantity(Card.Name, Amount);
+                }
+                else
+                {
+                    await _collectionDb.AddCard(Card);
+                }
             }
         }
 
@@ -69,6 +80,74 @@ namespace CardCollection.Classes.Data
 
         public async Task ImportCardCollection() =>
             await _collectionDb.ImportCardCollection(AddMTGCard);
-        
+
+        // ----- Deck methods -----
+        public async Task AddDeck(MTGDeck Deck)
+        {
+            // create a combined dictionary from Sideboard and Deck/Maindeck
+            // because cards can be in both dicts
+            Dictionary<string, int> CombinedDeck = new Dictionary<string, int>(Deck.Deck);
+
+            if (Deck.Sideboard != null)
+            {
+                foreach (var Card in Deck.Sideboard)
+                {
+                    if (CombinedDeck.ContainsKey(Card.Key))
+                        CombinedDeck[Card.Key] += Card.Value;
+                    else
+                        CombinedDeck[Card.Key] = Card.Value;
+                }
+            }
+
+            // check if the needed amount of cards are in the card collection
+            foreach (var CardFromDecklist in CombinedDeck)
+            {
+                MTGCard Card = await _collectionDb.FindCardByName(CardFromDecklist.Key);
+
+                if (Card.Quantity <= (CardFromDecklist.Value + Card.InUse))
+                {
+                    // stop the function because deck cant be added to collection
+                }
+            }
+
+            // update InUse for every card in the deck
+            foreach (var Card in CombinedDeck)
+            {
+                await _collectionDb.IncreaseInUse(Card.Key, Card.Value);
+            }
+
+            // add deck to deck collection
+            await _collectionDb.AddDeck(Deck);
+        }
+            
+
+        public async Task RemoveDeckByName(string DeckName) 
+        {
+            // First reduce the InUse of every card in the deck
+            MTGDeck Deck = await _collectionDb.FindDeckByName(DeckName);
+
+            // create a combined dictionary from maindeck and sideboard
+            Dictionary<string, int> CombinedDeck = new Dictionary<string, int>(Deck.Deck);
+
+            if (Deck.Sideboard != null)
+            {
+                foreach (var Card in Deck.Sideboard)
+                {
+                    if (CombinedDeck.ContainsKey(Card.Key))
+                        CombinedDeck[Card.Key] += Card.Value;
+                    else
+                        CombinedDeck[Card.Key] = Card.Value;
+                }
+            }
+
+            // reduce inUse
+            foreach (var Card in CombinedDeck)
+            {
+                await _collectionDb.DecreaseInUse(Card.Key, Card.Value);
+            }
+
+            await _collectionDb.RemoveDeckByName(DeckName);
+        }
+            
     }
 }

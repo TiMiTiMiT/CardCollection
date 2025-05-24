@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CardCollection.Classes.Models.Magic
 {
-    internal class MTGCard : ICard
+    public class MTGCard : ICard
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

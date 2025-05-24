@@ -4,6 +4,7 @@ using CardCollection.Classes.Models.Magic;
 using CardCollection.Classes.Data;
 using System.IO;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 while (true)
 {
@@ -19,13 +20,13 @@ while (true)
     switch (input)
     {
         case "0":
-            HandleSettingsCollection();
+            HandleSettings();
             break;
         case "1":
             await HandleCardCollection();
             break;
         case "2":
-            HandleDeckCollection();
+            await HandleDeckCollection();
             break;
         case "quit":
             return;
@@ -40,7 +41,7 @@ while (true)
 Settings
 --------------------------------------------------------------------------------------------------------------------------
 */
-static void HandleSettingsCollection()
+static void HandleSettings()
 {
     while (true)
     {
@@ -163,16 +164,7 @@ static async Task AddCardToCollection()
 
     if (CardName != null && Amount != null)
     {
-        bool CardExists = await GlobalVariables.MTGService.DoesCardExistInCollection(CardName);
-
-        if (CardExists)
-        {
-            await GlobalVariables.MTGService.IncreaseQuantityByName(CardName, Int32.Parse(Amount));
-        }
-        else
-        {
-            await GlobalVariables.MTGService.AddMTGCard(CardName, Int32.Parse(Amount));
-        }
+        await GlobalVariables.MTGService.AddMTGCard(CardName, Int32.Parse(Amount));
     }
 }
 
@@ -213,8 +205,15 @@ static async Task ChangeQuantity()
 
 static async Task ImportCollection() 
 {
-    waitForInputMessage("Make sure a txt file to import your collection from is in the collection folder. For more information check the documentation.");
-    await GlobalVariables.MTGService.ImportCardCollection();
+    Console.WriteLine("> Make sure a txt file to import your collection from is in the collection folder.\n> THIS WILL DELETE ALL CURRENT CARDS FROM YOUR COLLECTION!\n> For more information check the github wiki.");
+    Console.WriteLine("> Do you want to continue? (y/n)");
+    string? input = Console.ReadLine();
+
+    if(input == "y")
+    {
+        Console.WriteLine("Importing deck, plese wait...");
+        await GlobalVariables.MTGService.ImportCardCollection();
+    }
 }
 
 static async Task ExportCollection() 
@@ -229,23 +228,153 @@ static async Task ExportCollection()
 DECK COLLECTION
 --------------------------------------------------------------------------------------------------------------------------
 */
-static void HandleDeckCollection()
+static async Task HandleDeckCollection()
 {
-    Console.WriteLine("Managing your deck is currently Work in progress");
-
-    Console.WriteLine("> Type 'exit' if you want to go back");
-    string? input = Console.ReadLine();
-
-    switch (input)
+    while (true)
     {
-        case "exit":
-            goto EndOfLoop;
-        default:
-            waitForInputMessage("Comand not found!");
-            break;
+        clearConsole();
+        Console.WriteLine("> Press '1' if you want to import a deck to your collection");
+        Console.WriteLine("> Press '2' if you want to delete a deck from your collection");
+        Console.WriteLine("> Type 'exit' if you want to go back");
+
+        string? input = Console.ReadLine();
+
+        switch (input)
+        {
+            case "1":
+                await ImportDeck();
+                break;
+            case "2":
+                await DeleteDeck();
+                break;
+            case "exit":
+                goto EndOfLoop;
+            default:
+                waitForInputMessage("Comand not found!");
+                break;
+        }
+    }
+    EndOfLoop:;
+}
+
+static async Task ImportDeck() 
+{
+    Console.WriteLine("> Create a txt file in the Decklist folder and enter the name if the file. For more informationcheck the github wiki");
+    Console.WriteLine("> Enter the Deck name");
+    String? DeckName = Console.ReadLine();
+
+    if(DeckName != null)
+    {
+        MTGDeck Deck = ReadDecklist(DeckName);
+
+        Console.WriteLine("> What is the vaild format of the deck?");
+        String? Format = Console.ReadLine();
+        Deck.Format = Format;
+
+
+        if (Format != null && Format.ToLower() == "commander")
+        {
+            Console.WriteLine("> Who is the commadner of the deck");
+            String? Commander = Console.ReadLine();
+            Deck.Commander = Commander;
+        }
+
+        await GlobalVariables.MTGService.AddDeck(Deck);
     }
 
-    EndOfLoop:;
+    
+}
+
+static MTGDeck ReadDecklist(string DeckName)
+{
+    Dictionary<string, int> Decklist = new Dictionary<string, int>();
+    Dictionary<string, int> Sideboard = new Dictionary<string, int>();
+    bool isMainDeck = false;
+    bool isSideboard = false;
+
+    try
+    {
+        StreamReader StreamReader = new StreamReader($"C:\\Users\\Tim\\source\\repos\\CardCollection\\Savefiles\\Decklists\\{DeckName}.txt");
+        String? line;
+
+        // for more information about the format og the decklist check the github wiki
+        while ((line = StreamReader.ReadLine()) != null)
+        {
+            if (line == "Deck")
+            {
+                isMainDeck = true;
+                continue;
+            }else if (line == "Sideboard")
+            {
+                isSideboard = true;
+                continue;
+            }else if (line == "")
+            {
+                isMainDeck = false;
+                isSideboard = false;
+                continue;
+            } else if (isMainDeck)
+            {
+                (string? cardName, int amount) = FormatLineForDictionary(line);
+                Decklist[cardName] = amount;
+                continue;
+            }
+            else if (isSideboard)
+            {
+                (string? cardName, int amount) = FormatLineForDictionary(line);
+                Sideboard[cardName] = amount;
+            }
+        }
+
+        StreamReader.Close();
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
+
+    // create deck object and return
+    MTGDeck deck = new(
+        DeckName,
+        Decklist,
+        "",
+        Sideboard.Keys.Count > 0 ? Sideboard : null
+    );
+
+    return deck;
+}
+static (string?, int) FormatLineForDictionary(string line)
+{
+    Match match = Regex.Match(line, @"^(\S+)\s+(.+)$");
+
+    if (match.Success)
+    {
+        int amount = Int32.Parse(match.Groups[1].Value); // "1"
+        string cardName = match.Groups[2].Value; // "bla bla"
+
+        return (cardName, amount);
+    }
+
+    return (null, 0);
+}
+
+static async Task DeleteDeck()
+{
+    Console.WriteLine("> Enter the name of teh deck you want to delete");
+    String? DeckName = Console.ReadLine();
+
+    if (DeckName != null)
+    {
+        Console.WriteLine($"> Are you sure you want to delete {DeckName}? (y/n)");
+        String? Confirmation = Console.ReadLine();
+
+        if (Confirmation != null)
+        {
+            await GlobalVariables.MTGService.RemoveDeckByName(DeckName);
+        }
+    }
+
+    
 }
 
 /*

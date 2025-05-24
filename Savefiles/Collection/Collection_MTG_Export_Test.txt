@@ -1,0 +1,27 @@
+﻿Island:6
+Swamp:7
+Drowned Catacomb:2
+Watery Grave:1
+Darkslick Shores:2
+Field of Ruin:4
+Temple of Deceit:4
+Shark Typhoon:1
+Drown in the Loch:2
+Narset, Parter of Veils:2
+Sinister Sabotage:3
+Censor:4
+Consider:4
+Dig Through Time:3
+Extinction Event:2
+Negate:4
+Fatal Push:4
+Mystical Dispute:3
+Murderous Rider:2
+Torrential Gearhulk:2
+Heartless Act:2
+Languish:2
+Test of Talents:2
+Cry of the Carnarium:2
+Go Blank:2
+Cling to Dust:2
+Duress:3
