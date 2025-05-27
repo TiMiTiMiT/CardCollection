@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardCollection.Classes.Models.Interfaces
 {
-    internal interface IDeck
+    public interface IDeck
     {
         public string Name { get; }
     }

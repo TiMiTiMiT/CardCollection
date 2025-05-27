@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CardCollection.Classes.Models.Interfaces
 {
-    internal interface ICard
+    public interface ICard
     {
         public string? Id { get; set; }
         public string Name { get; } // Cardname

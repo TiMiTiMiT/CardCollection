@@ -3,11 +3,8 @@
 ## Description
 Card and Deck collektion (currently for Magic the Gathering) to keep an overview of cards in ones collection and the currently build decks
 
-My goal is to build a working prototype first and then go over the code again and clean up the code. 
-
-## Todos
-- add Errorhandling
-- Add Unit Tests when first real prototype works
+## TODO
+- add feedback if cards dont exist
 
 ## Featuer list for after cleanup
 - Get Collection details 

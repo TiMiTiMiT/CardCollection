@@ -5,6 +5,7 @@ using CardCollection.Classes.Data;
 using System.IO;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
+using CardCollection.Classes.Exceptions;
 
 //Create base settings if not existing
 string SettingsDir = Path.Combine(
@@ -164,13 +165,28 @@ static void ChangeSavefilePath()
 
     if(NewPath != null)
     {
-        // move old files to new path
-        Directory.Move(Settings["save_path"], Path.Combine(NewPath, "Savefiles"));
+        // check if files exist
+        if (Directory.Exists(Settings["save_path"]))
+        {
+            // move old files to new path
+            Directory.Move(Settings["save_path"], Path.Combine(NewPath, "Savefiles"));
 
-        // save new path
-        Settings["save_path"] = NewPath;
-        UpdateSettings();
+            // create collection directory if it doesnt exists
+            if (!Directory.Exists($"{NewPath}/Collection"))
+            {
+                Directory.CreateDirectory($"{NewPath}/Collection");
+            }
 
+            // create decklist directory if it doesnt exists
+            if (!Directory.Exists($"{NewPath}/Decklist"))
+            {
+                Directory.Exists($"{NewPath}/Decklist");
+            }
+
+            // save new path
+            Settings["save_path"] = NewPath;
+            UpdateSettings();
+        }
     }
 }
 
@@ -242,7 +258,17 @@ static async Task AddCardToCollection()
 
     if (CardName != null && Amount != null)
     {
-        await GlobalVariables.MTGService.AddMTGCard(CardName, Int32.Parse(Amount));
+        try
+        {
+            await GlobalVariables.MTGService.AddMTGCard(CardName, Int32.Parse(Amount));
+        }
+        catch (CardNotFoundException)
+        {
+            Console.WriteLine("> Could not find the card. Check for accidental typos.");
+        }catch(HttpRequestException)
+        {
+            Console.WriteLine("> Technical dificulties. Try again later");
+        } 
     }
 }
 
@@ -276,7 +302,16 @@ static async Task ChangeQuantity()
         }
         else if (Mode == "d")
         {
-            await GlobalVariables.MTGService.DecreaseQuantityByName(CardName, Int32.Parse(Amount));
+            try
+            {
+                await GlobalVariables.MTGService.DecreaseQuantityByName(CardName, Int32.Parse(Amount));
+            }
+            catch (CopiesInUseException e)
+            {
+                waitForInputMessage(e.Message);
+            }
+
+            
         }    
     }
 }
@@ -356,11 +391,8 @@ static async Task ImportDeck()
             String? Commander = Console.ReadLine();
             Deck.Commander = Commander;
         }
-
         await GlobalVariables.MTGService.AddDeck(Deck);
-    }
-
-    
+    }  
 }
 
 static MTGDeck ReadDecklist(string DeckName)

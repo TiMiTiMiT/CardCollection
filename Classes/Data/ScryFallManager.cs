@@ -1,32 +1,37 @@
-﻿using System;
+﻿using CardCollection.Classes.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CardCollection.Classes.Data
 {
-    internal class ScryFallManager
+    public class ScryFallManager
     {
         /* Use a MTG api to get card infomrations
          *https://scryfall.com/docs/api/
          */
-        private HttpClient Client;
-        string ApiString = "https://api.scryfall.com";
+        private readonly HttpClient _client;
+        private readonly string _apiBaseUrl = "https://api.scryfall.com";
 
-        public ScryFallManager()
+        public ScryFallManager(HttpClient client)
         {
-            Client = new HttpClient();
-            Client.DefaultRequestHeaders.UserAgent.ParseAdd("Card_Collection/1.0");
-            Client.DefaultRequestHeaders.Accept.ParseAdd("*/*");
+            _client = client;
+            _client.DefaultRequestHeaders.UserAgent.ParseAdd("Card_Collection/1.0");
+            _client.DefaultRequestHeaders.Accept.ParseAdd("*/*");
         }
 
         public async Task<string?> GetCard(string CardName, string param = "exact")
         {
             try
             {
-                HttpResponseMessage response = await Client.GetAsync($"{this.ApiString}/cards/named?{param}={CardName}");
-                response.EnsureSuccessStatusCode();
+                HttpResponseMessage response = await _client.GetAsync($"{_apiBaseUrl}/cards/named?{param}={CardName}");
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    throw new CardNotFoundException("Card was not Found");
+                }
 
                 string responseBody = await response.Content.ReadAsStringAsync();
 
@@ -34,8 +39,7 @@ namespace CardCollection.Classes.Data
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine($"Request error: {e.Message}");
-                return null;
+                throw new HttpRequestException();
             }
         }
     }

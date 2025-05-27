@@ -10,7 +10,7 @@ using MongoDB.Driver;
 
 namespace CardCollection.Classes.Data
 {
-    internal class MongoDbService<TCard, TDeck> 
+    public class MongoDbService<TCard, TDeck> 
         where TCard : ICard 
         where TDeck : IDeck
     {
@@ -21,7 +21,7 @@ namespace CardCollection.Classes.Data
         private IMongoCollection<TDeck> _deckCollection;
         private string DeckCollectionName;
 
-        public MongoDbService(string databaseName, string cardCollectionName, string deckCollectionName)
+        public MongoDbService(string cardCollectionName, string deckCollectionName)
         {
             Client = new MongoClient(GlobalVariables.Settings["mongoDB_conection"]);
             Database = Client.GetDatabase(GlobalVariables.Settings["mongoDB_database_name"]);
@@ -167,6 +167,5 @@ namespace CardCollection.Classes.Data
         {
             await Database.DropCollectionAsync(DeckCollectionName);
         }
-
     }
 }

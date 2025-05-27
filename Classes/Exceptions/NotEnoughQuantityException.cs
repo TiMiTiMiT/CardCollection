@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace CardCollection.Classes.Exceptions
 {
-    public class CardNotFoundException : Exception
+    public class NotEnoughQuantityException: Exception
     {
-        public CardNotFoundException(string message) : base(message)
-        {
-        }
+        public NotEnoughQuantityException(string message) : base(message) { }
     }
-
 }

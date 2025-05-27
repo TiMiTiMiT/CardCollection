@@ -15,7 +15,9 @@ namespace CardCollection.Classes
         static readonly string SettingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CardCollectionApp");
         public static readonly Dictionary<string, string> Settings = ReadSettingsFile();
         public static readonly string[] GamesAvailiable = ["MTG"];
-        public static readonly MTGService MTGService = new MTGService();
+        public static readonly MTGService MTGService = new MTGService("MTGCardCollection", "MTGDeckCollection");
+        // Used to interact with test db
+        //public static readonly MTGService MTGService = new MTGService("TestMtgCardCollection", "TestMtgDeckCollection");
 
         static Dictionary<string, string> ReadSettingsFile()
         {

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace CardCollection.Classes.Exceptions
 {
-    public class CardNotFoundException : Exception
+    public class CopiesInUseException : Exception
     {
-        public CardNotFoundException(string message) : base(message)
-        {
-        }
+        public CopiesInUseException(string message) : base(message) { }
     }
-
 }
